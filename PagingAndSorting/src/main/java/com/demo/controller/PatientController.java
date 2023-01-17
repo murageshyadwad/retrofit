@@ -93,7 +93,7 @@ public class PatientController  {
 	//@Cacheable(value = "patient")
 	// @CacheEvict(value="patient")
 	
-	public ResponseEntity<PatientModel> getPatientById(@ModelAttribute("name") PatientModel model ,@PathVariable("patientid") String id) {
+	public ResponseEntity<PatientModel> getPatientById(@ModelAttribute("name") PatientModel model ,@PathVariable("patientid") long id) {
 		PatientModel PatientRetrieved = patientService.getPatientById(id);
 		HttpServletResponse response = null;
 		//cookie
@@ -120,7 +120,7 @@ public class PatientController  {
 
 	@DeleteMapping("/patient/{patientid}")
 	@CacheEvict(value = "patient")
-	public ResponseEntity<String> DeletePatientById(@PathVariable("patientid") String id) {
+	public ResponseEntity<String> DeletePatientById(@PathVariable("patientid") long id) {
 		// Logger.debug("Entering delete patient endpoint");
 		try {
 			patientService.deletePatient(id);

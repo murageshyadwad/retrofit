@@ -4,6 +4,7 @@ package com.demo.util;
 
 import org.springframework.beans.factory.annotation.Value;
 
+
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 import okhttp3.OkHttpClient;
@@ -45,7 +46,7 @@ public class RetrofitConfig
 		
 		Retrofit.Builder builder = new Retrofit.Builder().baseUrl(serviceurl+"/patient/")
 				.addConverterFactory(GsonConverterFactory.create()).client(httpClient.build());
-
+		
 		Retrofit retrofit = builder.build();
 	
 		return retrofit.create(serviceClass);

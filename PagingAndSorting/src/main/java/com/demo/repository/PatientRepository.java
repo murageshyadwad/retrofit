@@ -1,5 +1,7 @@
 package com.demo.repository;
 
+import java.util.UUID;
+
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 

@@ -2,6 +2,9 @@ package com.demo.model;
 
 
 
+import java.util.UUID;
+
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,15 +20,23 @@ public class PatientModel {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private UUID id;
+	public UUID getId() {
+		return id;
+	}
+
+	public void setId(UUID id) {
+		this.id = id;
+	}
+
 	private String name;
 	
 	private String city;
 	
 	private String zip;
+	private String lname;
 	
-	@Transient
-	private String lname; 
+	
 
 	/*
 	 * public PatientModel() { super();
@@ -37,12 +48,13 @@ public class PatientModel {
 	 * this.lname=name+zip; }
 	 */
 
-	public long getId() {
-		return id;
+
+	public String getLname() {
+		return lname;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setLname(String lname) {
+		this.lname = lname;
 	}
 
 	public String getName() {
@@ -70,18 +82,10 @@ public class PatientModel {
 		this.zip = zip;
 	}
 
-	@Override
-	public String toString() {
-		return "PatientModel [id=" + id + ", name=" + name + ", city=" + city + ",lname=" + lname + ", zip=" + zip + "]";
-	}
+	
 
 	
-	public String getLname(String lname) {
-		return lname=name+lname;
-	}
 	
 	
-	public void setLname(String lname) {
-		this.lname = lname;
-	}
+	
 }

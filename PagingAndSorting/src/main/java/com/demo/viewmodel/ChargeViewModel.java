@@ -1,8 +1,21 @@
 package com.demo.viewmodel;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class ChargeViewModel {
-	
+	@Id
 	private long chargeid;
+	
+	private long id;
+	private String name;
+	private String city;
+	private String planname;
+	private String provider;
+	private String billingprovider;
+	private double total;
+	
 	public long getChargeid() {
 		return chargeid;
 	}
@@ -51,12 +64,4 @@ public class ChargeViewModel {
 	public void setTotal(double total) {
 		this.total = total;
 	}
-	private long id;
-	private String name;
-	private String city;
-	private String planname;
-	private String provider;
-	private String billingprovider;
-	private double total;
-
 }

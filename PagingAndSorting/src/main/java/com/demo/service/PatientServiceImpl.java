@@ -48,17 +48,17 @@ public class PatientServiceImpl implements PatientService {
 	}
 
 	@Override
-	public PatientModel getPatientById(String id) {
+	public PatientModel getPatientById(long id) {
 		System.out.println("called from db");
-		return repository.findByid(Long.parseLong(id));
+		return repository.findByid(id);
 
 	}
-	@Override
-	public String deletePatient(String id) {
-		
-		 repository.deleteById(Long.parseLong(id));
-		 return id;
-	}
+//	@Override
+//	public String deletePatient(long id) {
+//		
+//		 repository.deleteById(id);
+//		 return id;
+//	}
 
 	@Override
 	public PatientModel updatePatient(PatientModel model) {
@@ -71,6 +71,15 @@ public class PatientServiceImpl implements PatientService {
 
 	@Override
 	public String getDate() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+
+	@Override
+	public String deletePatient(long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
